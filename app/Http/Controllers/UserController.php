@@ -156,11 +156,12 @@ class UserController extends Controller
             if ($request->hasFile('foto')) {
                 $file = $request->file('foto');
                 $nama = 'logo-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('/img'), $nama);
+                // $file->move(public_path('/img'), $nama);
+                $file->storeAs('/img', $nama, 'public');
     
-                $user->foto = "/img/$nama";
+                $user->foto = "/storage/img/$nama";
             } 
-    
+     
             $user->update();
     
             return response()->json($user, 200);

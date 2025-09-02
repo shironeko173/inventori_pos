@@ -13,10 +13,10 @@ class LaporanExport implements FromView, ShouldAutoSize, WithColumnFormatting
     public function columnFormats(): array
     {
         return [
-            'C' => NumberFormat::FORMAT_CURRENCY_IDR,
-            'D' => NumberFormat::FORMAT_CURRENCY_IDR,
-            'E' => NumberFormat::FORMAT_CURRENCY_IDR,
-            'F' => NumberFormat::FORMAT_CURRENCY_IDR,
+            'C' => '"Rp"#,##0_-',
+            'D' => '"Rp"#,##0_-',
+            'E' => '"Rp"#,##0_-',
+            'F' => '"Rp"#,##0_-',
         ];
     }
 
